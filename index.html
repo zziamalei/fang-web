@@ -19,6 +19,7 @@
 </head>
 	
 <body>
+<div id="app">
 <!-- banner -->
 	<div class="banner">
 		<div class="container">
@@ -66,77 +67,26 @@
 	</div>
 <!-- //banner -->
 <!-- banner-bottom -->
-	<div class="banner-bottom">
+	<div class="banner-bottom" >
 		<div class="container">
-			<div class="banner-bottom-grids">
+			<div class="banner-bottom-grids" v-for="obj in houseList">
 				<div class="col-md-3 banner-bottom-grid">
-					<img src="images/1.jpg" alt=" " class="img-responsive" />
-					<div class="banner-bottom-grid-info">
+					<img v-bind:src="obj.thumbnailImage" alt=" " class="img-responsive" />
+					<div class="banner-bottom-grid-info" >
 						<div class="col-xs-4 banner-bottom-grid-infol">
-							<p>.01</p>
+							<p>.{{obj.id}}</p>
 						</div>
 						<div class="col-xs-8 banner-bottom-grid-infor">
-							<h3>qui dolorem fugiat</h3>
+							<h3>{{obj.title}}</h3>
 						</div>
 						<div class="clearfix"> </div>
-						<p class="vel">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse 
-								quam nihil molestiae consequatur.</p>
+						<p class="vel">{{obj.simpleInfo}}</p>
 							<div class="more m1">
-								<a href="single.html">Learn More</a>
+								<a href="single.html">查看详情</a>
 							</div>
 					</div>
 				</div>
-				<div class="col-md-3 banner-bottom-grid">
-					<img src="images/2.jpg" alt=" " class="img-responsive" />
-					<div class="banner-bottom-grid-info">
-						<div class="col-xs-4 banner-bottom-grid-infol">
-							<p>.02</p>
-						</div>
-						<div class="col-xs-8 banner-bottom-grid-infor">
-							<h3>qui dolorem fugiat</h3>
-						</div>
-						<div class="clearfix"> </div>
-						<p class="vel">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse 
-								quam nihil molestiae consequatur.</p>
-							<div class="more m1">
-								<a href="single.html">Learn More</a>
-							</div>
-					</div>
-				</div>
-				<div class="col-md-3 banner-bottom-grid">
-					<img src="images/3.jpg" alt=" " class="img-responsive" />
-					<div class="banner-bottom-grid-info">
-						<div class="col-xs-4 banner-bottom-grid-infol">
-							<p>.03</p>
-						</div>
-						<div class="col-xs-8 banner-bottom-grid-infor">
-							<h3>qui dolorem fugiat</h3>
-						</div>
-						<div class="clearfix"> </div>
-						<p class="vel">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse 
-								quam nihil molestiae consequatur.</p>
-							<div class="more m1">
-								<a href="single.html">Learn More</a>
-							</div>
-					</div>
-				</div>
-				<div class="col-md-3 banner-bottom-grid">
-					<img src="images/4.jpg" alt=" " class="img-responsive" />
-					<div class="banner-bottom-grid-info">
-						<div class="col-xs-4 banner-bottom-grid-infol">
-							<p>.04</p>
-						</div>
-						<div class="col-xs-8 banner-bottom-grid-infor">
-							<h3>qui dolorem fugiat</h3>
-						</div>
-						<div class="clearfix"> </div>
-						<p class="vel">Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse 
-								quam nihil molestiae consequatur.</p>
-							<div class="more m1">
-								<a href="single.html">Learn More</a>
-							</div>
-					</div>
-				</div>
+
 				<div class="clearfix"> </div>
 			</div>
 		</div>
@@ -331,10 +281,10 @@
 			<h3>我们的团队</h3>
 			<div class="testimonials-grids">
 				<ul id="flexiselDemo1">			
-					<li>
+					<li v-for="obj in employeeList">
 						<div class="testimonials-grid">
 							<div class="col-xs-5 testimonials-grid-left">
-								<img src="images/6.jpg" alt=" " class="img-responsive" />
+								<img v-bind:src="obj.headPic" alt=" " style="height: 60px;width: 60px;" class="img-responsive" />
 							</div>
 							<div class="col-xs-7 testimonials-grid-right">
 								<div class="rating">
@@ -349,42 +299,7 @@
 							<div class="clearfix"> </div>
 						</div>
 					</li>
-					<li>
-						<div class="testimonials-grid">
-							<div class="col-xs-5 testimonials-grid-left">
-								<img src="images/7.jpg" alt=" " class="img-responsive" />
-							</div>
-							<div class="col-xs-7 testimonials-grid-right">
-								<div class="rating">
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-								</div>
-								<p>Itaque earum rerum hic tenetur a sapiente delectus rerum hic tenetur.<span>James</span></p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</li>
-					<li>
-						<div class="testimonials-grid">
-							<div class="col-xs-5 testimonials-grid-left">
-								<img src="images/8.jpg" alt=" " class="img-responsive" />
-							</div>
-							<div class="col-xs-7 testimonials-grid-right">
-								<div class="rating">
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-								</div>
-								<p>Itaque earum rerum hic tenetur a sapiente delectus rerum hic tenetur.<span>Micheal France</span></p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</li>
+
 				</ul>
 					<script type="text/javascript">
 							$(window).load(function() {
@@ -475,5 +390,33 @@
 <!-- for bootstrap working -->
 		<script src="js/bootstrap.js"> </script>
 <!-- //for bootstrap working -->
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script>
+
+    var app = new Vue({
+        el: '#app',
+        data:{
+
+            houseList: [],
+            employeeList: []
+        }
+    });
+
+$.ajax({
+	url:'http://localhost:8088/house/index_list/4',
+	success:function (data) {
+		app.houseList=data.data;
+    }
+});
+$.ajax({
+	url:'http://localhost:8088/employee/index_list/4',
+	success:function (data) {
+		app.employeeList=data.data;
+    }
+});
+
+</script>
+
 </body>
 </html>
