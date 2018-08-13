@@ -69,9 +69,9 @@
 <!-- banner-bottom -->
 	<div class="banner-bottom" >
 		<div class="container">
-			<div class="banner-bottom-grids" v-for="obj in houseList">
-				<div class="col-md-3 banner-bottom-grid">
-					<img v-bind:src="obj.thumbnailImage" alt=" " class="img-responsive" />
+			<div class="banner-bottom-grids">
+				<div class="col-md-3 banner-bottom-grid"  v-for="obj in houseList">
+					<img v-bind:src="obj.thumbnailImage" alt=" " class="img-responsive" style="width: 250px;height: 250px" />
 					<div class="banner-bottom-grid-info" >
 						<div class="col-xs-4 banner-bottom-grid-infol">
 							<p>.{{obj.id}}</p>
@@ -284,17 +284,13 @@
 					<li v-for="obj in employeeList">
 						<div class="testimonials-grid">
 							<div class="col-xs-5 testimonials-grid-left">
-								<img v-bind:src="obj.headPic" alt=" " style="height: 60px;width: 60px;" class="img-responsive" />
+								<img v-bind:src="obj.headPic" alt=" " style="height: 100px;width: 100px;" class="img-responsive" />
 							</div>
 							<div class="col-xs-7 testimonials-grid-right">
 								<div class="rating">
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
-									<span>☆</span>
+									<span v-for=" i in obj.starNum">☆</span>
 								</div>
-								<p>Itaque earum rerum hic tenetur a sapiente delectus rerum hic tenetur.<span>Andrew Williums</span></p>
+								<p>{{obj.simpleInfo}}<span>{{obj.name}}</span></p>
 							</div>
 							<div class="clearfix"> </div>
 						</div>
