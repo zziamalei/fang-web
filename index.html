@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>小马地产</title>
+<title>java</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,53 +19,12 @@
 </head>
 	
 <body>
-<div id="app">
 <!-- banner -->
-	<div class="banner">
-		<div class="container">
-			<div class="header-nav">
-				<nav class="navbar navbar-default">
-					<!-- Brand and toggle get grouped for better mobile display -->
-					<div class="navbar-header">
-					  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					  </button>
-						<div class="logo">
-							<a class="navbar-brand" href="index.html">xiaoma <span>小马地产</span></a>
-						</div>
-					</div>
+<div id="banner"></div>
 
-					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar-nav">
-							<li class="active"><a href="index.html">首页</a></li>
-							<!--<li><a href="typo.html">Typo</a></li>-->
-							<li><a href="gallery.html">成功案例</a></li>
-							<li><a href="about.html">关于我们</a></li>
-							<li><a href="contact.html">联系我们</a></li>
-						</ul>
-						<div class="search" hidden="hidden">
-							<form>
-								<i class="glyphicon glyphicon-search" aria-hidden="true"></i><input type="text" value="Search Here..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search Here...';}" required>
-							</form>
-						</div>
-					</div><!-- /.navbar-collapse -->	
-				</nav>
-			</div>
-			<div class="banner-info">
-				<h1>{{company.simpleInfo}}</h1>
-				<!--<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
-					quam nihil molestiae consequatur.</p>
-				<div class="more m1">
-					<a href="single.html">Learn More</a>-->
-				</div>
-			</div>
-		</div>
-	</div>
 <!-- //banner -->
+<div id="app">
+
 <!-- banner-bottom -->
 	<div class="banner-bottom" >
 		<div class="container">
@@ -303,25 +262,25 @@
 									visibleItems: 3,
 									animationSpeed: 1000,
 									autoPlay: true,
-									autoPlaySpeed: 3000,    		
+									autoPlaySpeed: 3000,
 									pauseOnHover: true,
 									enableResponsiveBreakpoints: true,
-									responsiveBreakpoints: { 
-										portrait: { 
+									responsiveBreakpoints: {
+										portrait: {
 											changePoint:480,
 											visibleItems: 1
-										}, 
-										landscape: { 
+										},
+										landscape: {
 											changePoint:640,
 											visibleItems:2
 										},
-										tablet: { 
+										tablet: {
 											changePoint:768,
 											visibleItems: 2
 										}
 									}
 								});
-								
+
 							});
 					</script>
 					<script type="text/javascript" src="js/jquery.flexisel.js"></script>
@@ -330,63 +289,20 @@
 	</div>
 <!-- //testimonials -->
 <!--footer-->
-	<div class="footer">
-		<div class="container">
-			<div class="footer-row">
-				<div class="col-md-4 footer-grids">
-					<!--	<h4><a href="index.html">Residence</a></h4>
-                        <p><a href="mailto:info@example.com">mail@example.com</a></p>-->
-					<p>手机：{{company.phone}}</p>
-					<p> 微信：
-						<img style="height: 50%;width:50%"  v-bind:src="company.wechatUrl">
-					</p>
-					<ul class="social-icons" hidden="hidden">
-						<li><a href="#" class="p"></a></li>
-						<li><a href="#" class="in"></a></li>
-						<li><a href="#" class="v"></a></li>
-						<li><a href="#" class="facebook"></a></li>
-					</ul>
-				</div>
-				<div class="col-md-3 footer-grids">
-						<h3>网站导航</h3>
-					<ul>
-						<li><a href="index.html">首页</a></li>
-						<!--<li><a href="index.html">成功案例</a></li>-->
-						<!--<li><a href="typo.html">Typo</a></li>-->
-						<!--<li><a href="about.html">关于我们</a></li>-->
-						<li><a href="contact.html">联系我们</a></li>
-					</ul>
-				</div>
-				<div class="col-md-2 footer-grids">
-					<h3>服务</h3>
-					<ul>
 
-						<li><a href="#">新房交易</a></li>
-						<li><a href="#">二手房交易</a></li><!--<li><a href="gallery.html"></a></li>-->
-					</ul>
-				</div>
-				<div class="col-md-3 footer-grids" hidden="hidden">
-					<h3>Newsletter</h3>
-					<p>It was popularised in the 1960s with the release Ipsum. <p>
-					<form>					 
-					    <input type="text" class="text" value="Enter Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Email';}">
-						<input type="submit" value="Go">					 
-				 </form>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-	<div class="footer-bottom">
-		<div class="container">		
-			<p>Copyright &copy; 2018.91fajia All rights reserved.</p>
-		</div>
-	</div>
-<!--//footer-->	
+<div id="footer">
+
+
+
+</div>
+
+<!--//footer-->
 <!-- for bootstrap working -->
 		<script src="js/bootstrap.js"> </script>
 <!-- //for bootstrap working -->
 </div>
+
+
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 <script>
 
@@ -396,30 +312,40 @@
 
             houseList: [],
             employeeList: [],
-			company:{}
+            company:{}
         }
     });
 
-$.ajax({
-	url:'http://localhost:8088/house/index_list/4',
-	success:function (data) {
-		app.houseList=data.data;
-    }
-});
+    $('#banner').load('banner.html');
+    $('#footer').load('footer.html');
+
+    $(document).ready(function(){
+        loadData();
+
+    });
 
 
-$.ajax({
-	url:'http://localhost:8088/employee/index_list/4',
-	success:function (data) {
-		app.employeeList=data.data;
-    }
-});
-$.ajax({
-	url:'http://localhost:8088/company/get/1',
-	success:function (data) {
-		app.company=data.data;
-    }
-});
+function  loadData() {
+
+
+
+    $.ajax({
+        url:'/api/house/index_list/4',
+        success:function (data) {
+            app.houseList=data.data;
+        }
+    });
+
+
+    $.ajax({
+        url:'/api/employee/index_list/4',
+        success:function (data) {
+            app.employeeList=data.data;
+        }
+    });
+
+
+}
 
 </script>
 

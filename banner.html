@@ -1,0 +1,61 @@
+<div class="banner" id="bannerApp">
+    <div class="container">
+        <div class="header-nav">
+            <nav class="navbar navbar-default">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <div class="logo">
+                        <a class="navbar-brand" href="index.html">xiaoma <span>小马地产</span></a>
+                    </div>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="index.html">首页</a></li>
+                        <!--<li><a href="typo.html">Typo</a></li>-->
+                        <li><a href="gallery.html">成功案例</a></li>
+                        <li><a href="about.html">关于我们</a></li>
+                        <li><a href="contact.html">联系我们</a></li>
+                    </ul>
+                    <div class="search" hidden="hidden">
+                        <form>
+                            <i class="glyphicon glyphicon-search" aria-hidden="true"></i><input type="text" value="Search Here..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search Here...';}" required>
+                        </form>
+                    </div>
+                </div><!-- /.navbar-collapse -->
+            </nav>
+        </div>
+        <div class="banner-info">
+            <h1>{{company.simpleInfo}}</h1>
+            <!--<p>Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
+                quam nihil molestiae consequatur.</p>
+            <div class="more m1">
+                <a href="single.html">Learn More</a>-->
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var bannerApp = new Vue({
+        el: '#bannerApp',
+        data:{
+            company:{}
+        }
+    });
+
+    $.ajax({
+        url:'/api//company/get/1',
+        success:function (data) {
+            bannerApp.company=data.data;
+        }
+    });
+
+</script>

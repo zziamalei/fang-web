@@ -1,10 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<div class="footer" id="footerApp">
+    <div class="container">
+        <div class="footer-row">
+            <div class="col-md-4 footer-grids">
+                <!--	<h4><a href="index.html">Residence</a></h4>
+                    <p><a href="mailto:info@example.com">mail@example.com</a></p>-->
+                <p >手机：{{company.phone}}</p>
+                <p> 微信：
+                    <img style="height: 50%;width:50%"  v-bind:src="company.wechatUrl">
+                </p>
+                <ul class="social-icons" hidden="hidden">
+                    <li><a href="#" class="p"></a></li>
+                    <li><a href="#" class="in"></a></li>
+                    <li><a href="#" class="v"></a></li>
+                    <li><a href="#" class="facebook"></a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grids">
+                <h3>网站导航</h3>
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <!--<li><a href="index.html">成功案例</a></li>-->
+                    <!--<li><a href="typo.html">Typo</a></li>-->
+                    <!--<li><a href="about.html">关于我们</a></li>-->
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="col-md-2 footer-grids">
+                <h3>服务</h3>
+                <ul>
 
-</body>
-</html>
+                    <li><a href="#">新房交易</a></li>
+                    <li><a href="#">二手房交易</a></li><!--<li><a href="gallery.html"></a></li>-->
+                </ul>
+            </div>
+            <div class="col-md-3 footer-grids" hidden="hidden">
+                <h3>Newsletter</h3>
+                <p>It was popularised in the 1960s with the release Ipsum. <p>
+                <form>
+                    <input type="text" class="text" value="Enter Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter Email';}">
+                    <input type="submit" value="Go">
+                </form>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+</div>
+<div class="footer-bottom" >
+    <div class="container">
+        <p>Copyright &copy; 2018.91fajia All rights reserved.</p>
+    </div>
+</div>
+
+<script>
+
+
+    var footerApp = new Vue({
+        el: '#footerApp',
+        data:{
+            company:{}
+        }
+    });
+
+    $.ajax({
+        url:'/api//company/get/1',
+        success:function (data) {
+            footerApp.company=data.data;
+        }
+    });
+
+</script>
