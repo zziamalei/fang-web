@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Single</title>
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Residence Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+		function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- js -->
+<script src="js/jquery-1.11.1.min.js"></script>
+<!-- //js -->
+<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
+</head>
+	
+<body>
+<!-- banner -->
+<div id="banner"></div>
+<!-- //banner -->
+<!-- single -->
+	<div class="single" id="app">
+		<div class="container">
+			<div class="blog-pag page">
+				<div class="blog-page-grids">
+					<div class="blog-page-grid">
+						<h3>{{detail.title}}</h3>
+						<p>发布于<span> {{detail.publishTime}}</span></p>
+					</div>
+					<div class="blog-page-grid1" hidden="hidden">
+						<p><a href="#"><span class="glyphicon glyphicon-comment" aria-hidden="true"></span>8 Comments</a></p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="blog-page-grids-bottom">
+					<div v-html="detail.content">
+					</div>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+<!-- //single -->
+<!--footer-->
+<div id="footer"> </div>
+<!--//footer-->	
+<!-- for bootstrap working -->
+		<script src="js/bootstrap.js"> </script>
+<!-- //for bootstrap working -->
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+<script>
+
+    var app = new Vue({
+        el: '#app',
+        data:{
+            detail:{}
+        }
+    });
+
+    $('#banner').load('banner.html');
+    $('#footer').load('footer.html');
+
+    $(document).ready(function(){
+        loadData();
+
+    });
+
+
+    function  loadData() {
+
+
+        $.ajax({
+            url:'/api/house/detail/'+GetQueryString('id'),
+            success:function (data) {
+                app.detail=data.data;
+            }
+        });
+
+
+    }
+
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]);
+        return null;
+    }
+
+</script>
+
+</body>
+</html>
