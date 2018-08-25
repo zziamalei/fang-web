@@ -304,6 +304,7 @@
 
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script src="js/common.js"></script>
 <script>
 
     var app = new Vue({
@@ -330,7 +331,7 @@ function  loadData() {
 
 
     $.ajax({
-        url:'/api/house/index_list/4',
+        url:api_host+'/house/index_list/4',
         success:function (data) {
             app.houseList=data.data;
         }
@@ -338,7 +339,7 @@ function  loadData() {
 
 
     $.ajax({
-        url:'/api/employee/index_list/4',
+        url:api_host+'/employee/index_list/4',
         success:function (data) {
             app.employeeList=data.data;
         }

@@ -63,7 +63,7 @@
 <!-- //for bootstrap working -->
 
 <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-
+<script src="js/common.js"></script>
 <script>
 
     var app = new Vue({
@@ -86,7 +86,7 @@
 
 
         $.ajax({
-            url:'/api/company/get/1',
+            url:api_host+'/company/get/1',
             success:function (data) {
                 app.company=data.data;
             }
