@@ -1,1 +1,1 @@
-var api_host='http://localhost:8088';
+var api_host='http://192.168.0.226:8088';
