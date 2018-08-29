@@ -40,12 +40,13 @@
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+<script src="js/common.js"></script>
 <script type="text/javascript">
 
 
     var  companyId= GetQueryString('companyId');
     $.ajax({
-        url:'/api/company/get/'+companyId,
+        url:api_host+'/company/get/'+companyId,
         success:function (data) {
             loadMap(data.data);
         }
